@@ -1,0 +1,123 @@
+﻿@page "/"
+@using System.ComponentModel.DataAnnotations
+@using TvShowExplorer.Models
+@inject TvShowExplorer.Services.TvMazeService TvMaze
+
+<PageTitle>TV Show Explorer</PageTitle>
+
+<h1>TV Show Explorer</h1>
+
+<p>Search for a TV show by name (uses the TVmaze API).</p>
+
+<EditForm Model="@search" OnValidSubmit="@SearchAsync">
+    <DataAnnotationsValidator />
+
+    <div class="mb-3">
+        <label for="query" class="form-label">Show name</label>
+        <InputText id="query"
+                   class="form-control"
+                   @bind-Value="search.Query" />
+        <ValidationMessage For="@(() => search.Query)" />
+    </div>
+
+    <button type="submit" class="btn btn-primary" disabled="@isSearching">
+        @(isSearching ? "Searching..." : "Search")
+    </button>
+</EditForm>
+
+@if (!string.IsNullOrWhiteSpace(errorMessage))
+{
+    <div class="alert alert-warning mt-3">
+        @errorMessage
+    </div>
+}
+
+@if (results is not null && results.Count > 0)
+{
+    <div class="row row-cols-1 row-cols-md-3 g-3 mt-3">
+        @foreach (var item in results)
+        {
+            var show = item.Show;
+            <div class="col">
+                <div class="card h-100">
+                    @if (!string.IsNullOrEmpty(show.Image?.Medium))
+                    {
+                        <img src="@show.Image.Medium"
+                             class="card-img-top"
+                             alt="@show.Name" />
+                    }
+                    <div class="card-body">
+                        <h5 class="card-title">@show.Name</h5>
+
+                        @if (show.Genres is not null && show.Genres.Length > 0)
+                        {
+                            <p class="card-text">
+                                <strong>Genres:</strong>
+                                @string.Join(", ", show.Genres)
+                            </p>
+                        }
+
+                        @if (show.Rating?.Average is not null)
+                        {
+                            <p class="card-text">
+                                <strong>Rating:</strong> @show.Rating.Average
+                            </p>
+                        }
+
+                        @if (!string.IsNullOrWhiteSpace(show.Network?.Name))
+                        {
+                            <p class="card-text">
+                                <strong>Network:</strong> @show.Network.Name
+                            </p>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}
+else if (results is not null && results.Count == 0 && string.IsNullOrEmpty(errorMessage))
+{
+    <div class="alert alert-info mt-3">
+        No shows found. Try another search.
+    </div>
+}
+
+@code {
+    private SearchModel search = new();
+    private List<TvMazeSearchResult>? results;
+    private bool isSearching;
+    private string? errorMessage;
+
+    private async Task SearchAsync()
+    {
+        errorMessage = null;
+        results = null;
+        isSearching = true;
+
+        try
+        {
+            results = await TvMaze.SearchShowsAsync(search.Query!);
+
+            if (results.Count == 0)
+            {
+                errorMessage = "No shows found for that name.";
+            }
+        }
+        catch
+        {
+            errorMessage = "There was a problem contacting the TV service. Please try again.";
+        }
+        finally
+        {
+            isSearching = false;
+        }
+    }
+
+    public class SearchModel
+    {
+        [Required(ErrorMessage = "Please enter a show name.")]
+        [MinLength(2, ErrorMessage = "Type at least 2 characters.")]
+        public string? Query { get; set; }
+    }
+}
