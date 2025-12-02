@@ -3,24 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\X00190880\\BlazorCA3\\TvShowExplorer\\TvShowExplorer\\TvShowExplorer\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CF3B5DD9-2780-4686-9C07-913349728B03}|TvShowExplorer\\TvShowExplorer.csproj|c:\\users\\x00190880\\blazorca3\\tvshowexplorer\\tvshowexplorer\\tvshowexplorer\\tvshowexplorer\\services\\tvmazeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF3B5DD9-2780-4686-9C07-913349728B03}|TvShowExplorer\\TvShowExplorer.csproj|solutionrelative:tvshowexplorer\\services\\tvmazeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{18D2F301-4F75-743F-0F61-08E147A06DF3}|TvShowExplorer\\TvShowExplorer.csproj|c:\\users\\x00190880\\blazorca3\\tvshowexplorer\\tvshowexplorer\\tvshowexplorer\\tvshowexplorer\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{18D2F301-4F75-743F-0F61-08E147A06DF3}|TvShowExplorer\\TvShowExplorer.csproj|solutionrelative:tvshowexplorer\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CF3B5DD9-2780-4686-9C07-913349728B03}|TvShowExplorer\\TvShowExplorer.csproj|c:\\users\\x00190880\\blazorca3\\tvshowexplorer\\tvshowexplorer\\tvshowexplorer\\tvshowexplorer\\tvshowexplorer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{CF3B5DD9-2780-4686-9C07-913349728B03}|TvShowExplorer\\TvShowExplorer.csproj|solutionrelative:tvshowexplorer\\tvshowexplorer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{18D2F301-4F75-743F-0F61-08E147A06DF3}|TvShowExplorer\\TvShowExplorer.csproj|c:\\users\\x00190880\\blazorca3\\tvshowexplorer\\tvshowexplorer\\tvshowexplorer\\tvshowexplorer\\pages\\showdetails.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{18D2F301-4F75-743F-0F61-08E147A06DF3}|TvShowExplorer\\TvShowExplorer.csproj|solutionrelative:tvshowexplorer\\pages\\showdetails.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CF3B5DD9-2780-4686-9C07-913349728B03}|TvShowExplorer\\TvShowExplorer.csproj|c:\\users\\x00190880\\blazorca3\\tvshowexplorer\\tvshowexplorer\\tvshowexplorer\\tvshowexplorer\\models\\tvmazemodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF3B5DD9-2780-4686-9C07-913349728B03}|TvShowExplorer\\TvShowExplorer.csproj|solutionrelative:tvshowexplorer\\models\\tvmazemodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{18D2F301-4F75-743F-0F61-08E147A06DF3}|TvShowExplorer\\TvShowExplorer.csproj|c:\\users\\x00190880\\blazorca3\\tvshowexplorer\\tvshowexplorer\\tvshowexplorer\\tvshowexplorer\\services\\tvmazeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18D2F301-4F75-743F-0F61-08E147A06DF3}|TvShowExplorer\\TvShowExplorer.csproj|solutionrelative:tvshowexplorer\\services\\tvmazeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CF3B5DD9-2780-4686-9C07-913349728B03}|TvShowExplorer\\TvShowExplorer.csproj|c:\\users\\x00190880\\blazorca3\\tvshowexplorer\\tvshowexplorer\\tvshowexplorer\\tvshowexplorer\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{CF3B5DD9-2780-4686-9C07-913349728B03}|TvShowExplorer\\TvShowExplorer.csproj|solutionrelative:tvshowexplorer\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{18D2F301-4F75-743F-0F61-08E147A06DF3}|TvShowExplorer\\TvShowExplorer.csproj|c:\\users\\x00190880\\blazorca3\\tvshowexplorer\\tvshowexplorer\\tvshowexplorer\\tvshowexplorer\\models\\tvmazemodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18D2F301-4F75-743F-0F61-08E147A06DF3}|TvShowExplorer\\TvShowExplorer.csproj|solutionrelative:tvshowexplorer\\models\\tvmazemodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CF3B5DD9-2780-4686-9C07-913349728B03}|TvShowExplorer\\TvShowExplorer.csproj|c:\\users\\x00190880\\blazorca3\\tvshowexplorer\\tvshowexplorer\\tvshowexplorer\\tvshowexplorer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CF3B5DD9-2780-4686-9C07-913349728B03}|TvShowExplorer\\TvShowExplorer.csproj|solutionrelative:tvshowexplorer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{18D2F301-4F75-743F-0F61-08E147A06DF3}|TvShowExplorer\\TvShowExplorer.csproj|c:\\users\\x00190880\\blazorca3\\tvshowexplorer\\tvshowexplorer\\tvshowexplorer\\tvshowexplorer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{18D2F301-4F75-743F-0F61-08E147A06DF3}|TvShowExplorer\\TvShowExplorer.csproj|solutionrelative:tvshowexplorer\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{18D2F301-4F75-743F-0F61-08E147A06DF3}|TvShowExplorer\\TvShowExplorer.csproj|c:\\users\\x00190880\\blazorca3\\tvshowexplorer\\tvshowexplorer\\tvshowexplorer\\tvshowexplorer\\tvshowexplorer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{18D2F301-4F75-743F-0F61-08E147A06DF3}|TvShowExplorer\\TvShowExplorer.csproj|solutionrelative:tvshowexplorer\\tvshowexplorer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,25 +34,55 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "ShowDetails.razor",
+              "DocumentMoniker": "C:\\Users\\X00190880\\BlazorCA3\\TvShowExplorer\\TvShowExplorer\\TvShowExplorer\\TvShowExplorer\\Pages\\ShowDetails.razor",
+              "RelativeDocumentMoniker": "TvShowExplorer\\Pages\\ShowDetails.razor",
+              "ToolTip": "C:\\Users\\X00190880\\BlazorCA3\\TvShowExplorer\\TvShowExplorer\\TvShowExplorer\\TvShowExplorer\\Pages\\ShowDetails.razor",
+              "RelativeToolTip": "TvShowExplorer\\Pages\\ShowDetails.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-02T00:58:49.182Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "TvMazeService.cs",
               "DocumentMoniker": "C:\\Users\\X00190880\\BlazorCA3\\TvShowExplorer\\TvShowExplorer\\TvShowExplorer\\TvShowExplorer\\Services\\TvMazeService.cs",
               "RelativeDocumentMoniker": "TvShowExplorer\\Services\\TvMazeService.cs",
               "ToolTip": "C:\\Users\\X00190880\\BlazorCA3\\TvShowExplorer\\TvShowExplorer\\TvShowExplorer\\TvShowExplorer\\Services\\TvMazeService.cs",
               "RelativeToolTip": "TvShowExplorer\\Services\\TvMazeService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwC4AAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-01T22:09:09.149Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "TvShowExplorer",
+              "DocumentIndex": 0,
+              "Title": "Home.razor",
+              "DocumentMoniker": "C:\\Users\\X00190880\\BlazorCA3\\TvShowExplorer\\TvShowExplorer\\TvShowExplorer\\TvShowExplorer\\Pages\\Home.razor",
+              "RelativeDocumentMoniker": "TvShowExplorer\\Pages\\Home.razor",
+              "ToolTip": "C:\\Users\\X00190880\\BlazorCA3\\TvShowExplorer\\TvShowExplorer\\TvShowExplorer\\TvShowExplorer\\Pages\\Home.razor",
+              "RelativeToolTip": "TvShowExplorer\\Pages\\Home.razor",
+              "ViewState": "AgIAAGwAAAAAAAAAAAAAAAUAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-01T22:28:20.021Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TvShowExplorer.csproj",
               "DocumentMoniker": "C:\\Users\\X00190880\\BlazorCA3\\TvShowExplorer\\TvShowExplorer\\TvShowExplorer\\TvShowExplorer\\TvShowExplorer.csproj",
               "RelativeDocumentMoniker": "TvShowExplorer\\TvShowExplorer.csproj",
               "ToolTip": "C:\\Users\\X00190880\\BlazorCA3\\TvShowExplorer\\TvShowExplorer\\TvShowExplorer\\TvShowExplorer\\TvShowExplorer.csproj",
@@ -56,19 +90,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2025-12-01T22:07:14.879Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Home.razor",
-              "DocumentMoniker": "C:\\Users\\X00190880\\BlazorCA3\\TvShowExplorer\\TvShowExplorer\\TvShowExplorer\\TvShowExplorer\\Pages\\Home.razor",
-              "RelativeDocumentMoniker": "TvShowExplorer\\Pages\\Home.razor",
-              "ToolTip": "C:\\Users\\X00190880\\BlazorCA3\\TvShowExplorer\\TvShowExplorer\\TvShowExplorer\\TvShowExplorer\\Pages\\Home.razor",
-              "RelativeToolTip": "TvShowExplorer\\Pages\\Home.razor",
-              "ViewState": "AgIAAGwAAAAAAAAAAAAAAHsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-01T22:28:20.021Z",
               "EditorCaption": ""
             },
             {
@@ -86,13 +107,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "TvMazeModels.cs",
               "DocumentMoniker": "C:\\Users\\X00190880\\BlazorCA3\\TvShowExplorer\\TvShowExplorer\\TvShowExplorer\\TvShowExplorer\\Models\\TvMazeModels.cs",
               "RelativeDocumentMoniker": "TvShowExplorer\\Models\\TvMazeModels.cs",
               "ToolTip": "C:\\Users\\X00190880\\BlazorCA3\\TvShowExplorer\\TvShowExplorer\\TvShowExplorer\\TvShowExplorer\\Models\\TvMazeModels.cs",
               "RelativeToolTip": "TvShowExplorer\\Models\\TvMazeModels.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAYwBMAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-01T22:06:43.211Z",
               "EditorCaption": ""

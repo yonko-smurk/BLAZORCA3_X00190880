@@ -5,7 +5,7 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
   "mainAssemblyName": "TvShowExplorer",
   "applicationEnvironment": "Development",
   "resources": {
-    "hash": "sha256-pe78EQ9qQARZEvvl7lCGj80RtSK9ExDhOEJfiIv22YM=",
+    "hash": "sha256-+F1lETXk99bRSdlAvf0IVSMn5PwDRGtbGNaoP0qCkHQ=",
     "jsModuleNative": [
       {
         "name": "dotnet.native.xanz2e7ksm.js"
@@ -1039,15 +1039,15 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
       },
       {
         "virtualPath": "TvShowExplorer.wasm",
-        "name": "TvShowExplorer.s9d3uouy6r.wasm",
-        "integrity": "sha256-8AMt10Q3cvUqFdrs0YId6IO5V8+d4ujxTL3847gqAA8="
+        "name": "TvShowExplorer.amhvkp1blw.wasm",
+        "integrity": "sha256-8tLBRmOJv9xGPBdDmRmQ2hcRdKMv2uQfpXotAZ4IPxQ="
       }
     ],
     "pdb": [
       {
         "virtualPath": "TvShowExplorer.pdb",
-        "name": "TvShowExplorer.yrpi7r90vh.pdb",
-        "integrity": "sha256-Amr1/h/We0+zcwqCY629GKaYTFpQglReMpV5uJeYScM="
+        "name": "TvShowExplorer.4e0u4p04bo.pdb",
+        "integrity": "sha256-fOUZfKHoMvU+pPUh9h54WZqD+DdNHIMklmgUpSOl4Us="
       }
     ],
     "libraryInitializers": [

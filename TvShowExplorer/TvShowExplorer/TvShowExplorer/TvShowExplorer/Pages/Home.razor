@@ -39,39 +39,45 @@
         {
             var show = item.Show;
             <div class="col">
-                <div class="card h-100">
-                    @if (!string.IsNullOrEmpty(show.Image?.Medium))
-                    {
-                        <img src="@show.Image.Medium"
-                             class="card-img-top"
-                             alt="@show.Name" />
-                    }
-                    <div class="card-body">
-                        <h5 class="card-title">@show.Name</h5>
-
-                        @if (show.Genres is not null && show.Genres.Length > 0)
+                <a class="text-decoration-none text-dark" href="@($"/show/{show.Id}")">
+                    <div class="card h-100">
+                        @if (!string.IsNullOrEmpty(show.Image?.Medium))
                         {
-                            <p class="card-text">
-                                <strong>Genres:</strong>
-                                @string.Join(", ", show.Genres)
-                            </p>
+                            <img src="@show.Image.Medium"
+                                 class="card-img-top"
+                                 alt="@show.Name" />
                         }
+                        <div class="card-body">
+                            <h5 class="card-title">@show.Name</h5>
 
-                        @if (show.Rating?.Average is not null)
-                        {
-                            <p class="card-text">
-                                <strong>Rating:</strong> @show.Rating.Average
-                            </p>
-                        }
+                            @if (show.Genres is not null && show.Genres.Length > 0)
+                            {
+                                <p class="card-text">
+                                    <strong>Genres:</strong>
+                                    @string.Join(", ", show.Genres)
+                                </p>
+                            }
 
-                        @if (!string.IsNullOrWhiteSpace(show.Network?.Name))
-                        {
+                            @if (show.Rating?.Average is not null)
+                            {
+                                <p class="card-text">
+                                    <strong>Rating:</strong> @show.Rating.Average
+                                </p>
+                            }
+
+                            @if (!string.IsNullOrWhiteSpace(show.Network?.Name))
+                            {
+                                <p class="card-text">
+                                    <strong>Network:</strong> @show.Network.Name
+                                </p>
+                            }
+
                             <p class="card-text">
-                                <strong>Network:</strong> @show.Network.Name
+                                <small class="text-primary">View details →</small>
                             </p>
-                        }
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
         }
     </div>

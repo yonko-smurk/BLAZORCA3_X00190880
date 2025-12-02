@@ -207,9 +207,6 @@ C:\Users\X00190880\BlazorCA3\TvShowExplorer\TvShowExplorer\TvShowExplorer\TvShow
 C:\Users\X00190880\BlazorCA3\TvShowExplorer\TvShowExplorer\TvShowExplorer\TvShowExplorer\bin\Debug\net10.0\wwwroot\_framework\icudt_CJK.tjcz0u77k5.dat
 C:\Users\X00190880\BlazorCA3\TvShowExplorer\TvShowExplorer\TvShowExplorer\TvShowExplorer\bin\Debug\net10.0\wwwroot\_framework\icudt_EFIGS.tptq2av103.dat
 C:\Users\X00190880\BlazorCA3\TvShowExplorer\TvShowExplorer\TvShowExplorer\TvShowExplorer\bin\Debug\net10.0\wwwroot\_framework\icudt_no_CJK.lfu7j35m59.dat
-C:\Users\X00190880\BlazorCA3\TvShowExplorer\TvShowExplorer\TvShowExplorer\TvShowExplorer\bin\Debug\net10.0\wwwroot\_framework\TvShowExplorer.s9d3uouy6r.wasm
-C:\Users\X00190880\BlazorCA3\TvShowExplorer\TvShowExplorer\TvShowExplorer\TvShowExplorer\bin\Debug\net10.0\wwwroot\_framework\TvShowExplorer.yrpi7r90vh.pdb
-C:\Users\X00190880\BlazorCA3\TvShowExplorer\TvShowExplorer\TvShowExplorer\TvShowExplorer\bin\Debug\net10.0\wwwroot\_framework\dotnet.4nphvfm0lu.js
 C:\Users\X00190880\BlazorCA3\TvShowExplorer\TvShowExplorer\TvShowExplorer\TvShowExplorer\bin\Debug\net10.0\wwwroot\_framework\blazor.webassembly.66stpp682q.js.gz
 C:\Users\X00190880\BlazorCA3\TvShowExplorer\TvShowExplorer\TvShowExplorer\TvShowExplorer\bin\Debug\net10.0\wwwroot\_framework\Microsoft.AspNetCore.Authorization.f7yamg8acn.wasm.gz
 C:\Users\X00190880\BlazorCA3\TvShowExplorer\TvShowExplorer\TvShowExplorer\TvShowExplorer\bin\Debug\net10.0\wwwroot\_framework\Microsoft.AspNetCore.Components.i180xx2qq9.wasm.gz
@@ -418,9 +415,6 @@ C:\Users\X00190880\BlazorCA3\TvShowExplorer\TvShowExplorer\TvShowExplorer\TvShow
 C:\Users\X00190880\BlazorCA3\TvShowExplorer\TvShowExplorer\TvShowExplorer\TvShowExplorer\bin\Debug\net10.0\wwwroot\_framework\icudt_CJK.tjcz0u77k5.dat.gz
 C:\Users\X00190880\BlazorCA3\TvShowExplorer\TvShowExplorer\TvShowExplorer\TvShowExplorer\bin\Debug\net10.0\wwwroot\_framework\icudt_EFIGS.tptq2av103.dat.gz
 C:\Users\X00190880\BlazorCA3\TvShowExplorer\TvShowExplorer\TvShowExplorer\TvShowExplorer\bin\Debug\net10.0\wwwroot\_framework\icudt_no_CJK.lfu7j35m59.dat.gz
-C:\Users\X00190880\BlazorCA3\TvShowExplorer\TvShowExplorer\TvShowExplorer\TvShowExplorer\bin\Debug\net10.0\wwwroot\_framework\TvShowExplorer.s9d3uouy6r.wasm.gz
-C:\Users\X00190880\BlazorCA3\TvShowExplorer\TvShowExplorer\TvShowExplorer\TvShowExplorer\bin\Debug\net10.0\wwwroot\_framework\TvShowExplorer.yrpi7r90vh.pdb.gz
-C:\Users\X00190880\BlazorCA3\TvShowExplorer\TvShowExplorer\TvShowExplorer\TvShowExplorer\bin\Debug\net10.0\wwwroot\_framework\dotnet.4nphvfm0lu.js.gz
 C:\Users\X00190880\BlazorCA3\TvShowExplorer\TvShowExplorer\TvShowExplorer\TvShowExplorer\bin\Debug\net10.0\TvShowExplorer.staticwebassets.runtime.json
 C:\Users\X00190880\BlazorCA3\TvShowExplorer\TvShowExplorer\TvShowExplorer\TvShowExplorer\bin\Debug\net10.0\TvShowExplorer.staticwebassets.endpoints.json
 C:\Users\X00190880\BlazorCA3\TvShowExplorer\TvShowExplorer\TvShowExplorer\TvShowExplorer\bin\Debug\net10.0\TvShowExplorer.dll
@@ -1111,10 +1105,6 @@ C:\Users\X00190880\BlazorCA3\TvShowExplorer\TvShowExplorer\TvShowExplorer\TvShow
 C:\Users\X00190880\BlazorCA3\TvShowExplorer\TvShowExplorer\TvShowExplorer\TvShowExplorer\obj\Debug\net10.0\compressed\b42sndj1kx-{0}-tjcz0u77k5-tjcz0u77k5.gz
 C:\Users\X00190880\BlazorCA3\TvShowExplorer\TvShowExplorer\TvShowExplorer\TvShowExplorer\obj\Debug\net10.0\compressed\wuqqiqr5rd-{0}-tptq2av103-tptq2av103.gz
 C:\Users\X00190880\BlazorCA3\TvShowExplorer\TvShowExplorer\TvShowExplorer\TvShowExplorer\obj\Debug\net10.0\compressed\czxgllxt0e-{0}-lfu7j35m59-lfu7j35m59.gz
-C:\Users\X00190880\BlazorCA3\TvShowExplorer\TvShowExplorer\TvShowExplorer\TvShowExplorer\obj\Debug\net10.0\compressed\aa0gfjxdcz-{0}-s9d3uouy6r-s9d3uouy6r.gz
-C:\Users\X00190880\BlazorCA3\TvShowExplorer\TvShowExplorer\TvShowExplorer\TvShowExplorer\obj\Debug\net10.0\compressed\nbynp5qyfd-{0}-yrpi7r90vh-yrpi7r90vh.gz
-C:\Users\X00190880\BlazorCA3\TvShowExplorer\TvShowExplorer\TvShowExplorer\TvShowExplorer\obj\Debug\net10.0\compressed\sbn5wsc461-{0}-4nphvfm0lu-4nphvfm0lu.gz
-C:\Users\X00190880\BlazorCA3\TvShowExplorer\TvShowExplorer\TvShowExplorer\TvShowExplorer\obj\Debug\net10.0\compressed\dma3e80jyn-{0}-ro6crvkyhy-ro6crvkyhy.gz
 C:\Users\X00190880\BlazorCA3\TvShowExplorer\TvShowExplorer\TvShowExplorer\TvShowExplorer\obj\Debug\net10.0\staticwebassets.build.json
 C:\Users\X00190880\BlazorCA3\TvShowExplorer\TvShowExplorer\TvShowExplorer\TvShowExplorer\obj\Debug\net10.0\staticwebassets.build.json.cache
 C:\Users\X00190880\BlazorCA3\TvShowExplorer\TvShowExplorer\TvShowExplorer\TvShowExplorer\obj\Debug\net10.0\staticwebassets.development.json
@@ -1126,3 +1116,13 @@ C:\Users\X00190880\BlazorCA3\TvShowExplorer\TvShowExplorer\TvShowExplorer\TvShow
 C:\Users\X00190880\BlazorCA3\TvShowExplorer\TvShowExplorer\TvShowExplorer\TvShowExplorer\obj\Debug\net10.0\refint\TvShowExplorer.dll
 C:\Users\X00190880\BlazorCA3\TvShowExplorer\TvShowExplorer\TvShowExplorer\TvShowExplorer\obj\Debug\net10.0\TvShowExplorer.pdb
 C:\Users\X00190880\BlazorCA3\TvShowExplorer\TvShowExplorer\TvShowExplorer\TvShowExplorer\obj\Debug\net10.0\ref\TvShowExplorer.dll
+C:\Users\X00190880\BlazorCA3\TvShowExplorer\TvShowExplorer\TvShowExplorer\TvShowExplorer\bin\Debug\net10.0\wwwroot\_framework\TvShowExplorer.amhvkp1blw.wasm
+C:\Users\X00190880\BlazorCA3\TvShowExplorer\TvShowExplorer\TvShowExplorer\TvShowExplorer\bin\Debug\net10.0\wwwroot\_framework\TvShowExplorer.4e0u4p04bo.pdb
+C:\Users\X00190880\BlazorCA3\TvShowExplorer\TvShowExplorer\TvShowExplorer\TvShowExplorer\bin\Debug\net10.0\wwwroot\_framework\dotnet.yejx8z0fu5.js
+C:\Users\X00190880\BlazorCA3\TvShowExplorer\TvShowExplorer\TvShowExplorer\TvShowExplorer\bin\Debug\net10.0\wwwroot\_framework\TvShowExplorer.amhvkp1blw.wasm.gz
+C:\Users\X00190880\BlazorCA3\TvShowExplorer\TvShowExplorer\TvShowExplorer\TvShowExplorer\bin\Debug\net10.0\wwwroot\_framework\TvShowExplorer.4e0u4p04bo.pdb.gz
+C:\Users\X00190880\BlazorCA3\TvShowExplorer\TvShowExplorer\TvShowExplorer\TvShowExplorer\bin\Debug\net10.0\wwwroot\_framework\dotnet.yejx8z0fu5.js.gz
+C:\Users\X00190880\BlazorCA3\TvShowExplorer\TvShowExplorer\TvShowExplorer\TvShowExplorer\obj\Debug\net10.0\compressed\aa0gfjxdcz-{0}-amhvkp1blw-amhvkp1blw.gz
+C:\Users\X00190880\BlazorCA3\TvShowExplorer\TvShowExplorer\TvShowExplorer\TvShowExplorer\obj\Debug\net10.0\compressed\nbynp5qyfd-{0}-4e0u4p04bo-4e0u4p04bo.gz
+C:\Users\X00190880\BlazorCA3\TvShowExplorer\TvShowExplorer\TvShowExplorer\TvShowExplorer\obj\Debug\net10.0\compressed\sbn5wsc461-{0}-yejx8z0fu5-yejx8z0fu5.gz
+C:\Users\X00190880\BlazorCA3\TvShowExplorer\TvShowExplorer\TvShowExplorer\TvShowExplorer\obj\Debug\net10.0\compressed\dma3e80jyn-{0}-30grpbe7d4-30grpbe7d4.gz

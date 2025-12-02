@@ -1,0 +1,156 @@
+﻿@page "/show/{Id:int}"
+@using TvShowExplorer.Models
+@inject TvShowExplorer.Services.TvMazeService TvMaze
+@using Microsoft.AspNetCore.Components
+
+
+<PageTitle>Show details</PageTitle>
+
+@if (isLoading)
+{
+    <p>Loading show details...</p>
+}
+else if (!string.IsNullOrEmpty(errorMessage))
+{
+    <div class="alert alert-warning">@errorMessage</div>
+}
+else if (show is null)
+{
+    <div class="alert alert-info">Show not found.</div>
+}
+else
+{
+    <div class="row mt-3">
+        <div class="col-md-4">
+            @if (!string.IsNullOrEmpty(show.Image?.Original ?? show.Image?.Medium))
+            {
+                var img = show.Image!.Original ?? show.Image!.Medium;
+                <img src="@img" alt="@show.Name" class="img-fluid rounded" />
+            }
+        </div>
+
+        <div class="col-md-8">
+            <h2>@show.Name</h2>
+
+            @if (show.Genres is not null && show.Genres.Length > 0)
+            {
+                <p><strong>Genres:</strong> @string.Join(", ", show.Genres)</p>
+            }
+
+            @if (show.Rating?.Average is not null)
+            {
+                <p><strong>Rating:</strong> @show.Rating.Average</p>
+            }
+
+            @if (!string.IsNullOrWhiteSpace(show.Network?.Name))
+            {
+                <p><strong>Network:</strong> @show.Network.Name</p>
+            }
+
+            @if (!string.IsNullOrWhiteSpace(show.Summary))
+            {
+                <h5>Summary</h5>
+                <p>@((MarkupString)show.Summary!)</p>
+            }
+        </div>
+    </div>
+
+    <hr />
+
+    <h4>Episodes</h4>
+
+    @if (seasons.Count > 1)
+    {
+        <div class="mb-3">
+            <label class="form-label">Season</label>
+            <select class="form-select" @bind="selectedSeason">
+                @foreach (var s in seasons)
+                {
+                    <option value="@s">Season @s</option>
+                }
+            </select>
+        </div>
+    }
+
+    @if (FilteredEpisodes?.Any() == true)
+    {
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Season</th>
+                    <th>Episode</th>
+                    <th>Title</th>
+                    <th>Air date</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var e in FilteredEpisodes!)
+                {
+                    <tr>
+                        <td>@e.Season</td>
+                        <td>@e.Number</td>
+                        <td>@e.Name</td>
+                        <td>@e.Airdate</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>No episodes found.</p>
+    }
+}
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+
+    private TvMazeShow? show;
+    private List<TvMazeEpisode>? episodes;
+    private bool isLoading = true;
+    private string? errorMessage;
+    private List<int> seasons = new();
+    private int selectedSeason;
+
+    protected override async Task OnParametersSetAsync()
+    {
+        isLoading = true;
+        errorMessage = null;
+
+        try
+        {
+            show = await TvMaze.GetShowByIdAsync(Id);
+            episodes = await TvMaze.GetEpisodesForShowAsync(Id);
+
+            if (episodes is not null && episodes.Count > 0)
+            {
+                seasons = episodes
+                    .Where(e => e.Season.HasValue)
+                    .Select(e => e.Season!.Value)
+                    .Distinct()
+                    .OrderBy(s => s)
+                    .ToList();
+
+                if (seasons.Count > 0)
+                {
+                    selectedSeason = seasons[0];
+                }
+            }
+        }
+        catch
+        {
+            errorMessage = "There was a problem loading this show's details.";
+        }
+        finally
+        {
+            isLoading = false;
+        }
+    }
+
+    private IEnumerable<TvMazeEpisode>? FilteredEpisodes =>
+        episodes?
+            .Where(e => !e.Season.HasValue || e.Season.Value == selectedSeason)
+            .OrderBy(e => e.Season)
+            .ThenBy(e => e.Number);
+}

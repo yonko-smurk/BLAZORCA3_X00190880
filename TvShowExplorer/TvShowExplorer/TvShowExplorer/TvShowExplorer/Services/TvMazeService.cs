@@ -28,7 +28,23 @@ namespace TvShowExplorer.Services
             }
             catch
             {
-                // Let the UI show a friendly error message
+                
+                throw;
+            }
+        }
+
+        public async Task<TvMazeShow?> GetShowByIdAsync(int id)
+        {
+            var url = $"/shows/{id}";
+
+            try
+            {
+                var show = await _http.GetFromJsonAsync<TvMazeShow>(url);
+                return show;
+            }
+            catch
+            {
+                // allowing the ui to handle nulls
                 throw;
             }
         }
