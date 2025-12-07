@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TvShowExplorer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ce2175810c42a1d1a5e4632ba3ff8cb562e7c967")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+688144858fdfc746d0183935449e7d02fcd4c074")]
 [assembly: System.Reflection.AssemblyProductAttribute("TvShowExplorer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TvShowExplorer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

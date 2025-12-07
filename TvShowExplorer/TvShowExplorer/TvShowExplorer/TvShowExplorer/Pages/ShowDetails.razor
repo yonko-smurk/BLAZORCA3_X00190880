@@ -1,8 +1,8 @@
 ﻿@page "/show/{Id:int}"
+@using System
+@using System.Linq
 @using TvShowExplorer.Models
 @inject TvShowExplorer.Services.TvMazeService TvMaze
-@using Microsoft.AspNetCore.Components
-
 
 <PageTitle>Show details</PageTitle>
 
@@ -55,6 +55,16 @@ else
         </div>
     </div>
 
+    @if (episodes is not null && episodes.Count > 0)
+    {
+        <div class="alert alert-secondary mt-3">
+            <strong>Show statistics:</strong>
+            <div>Total seasons: @seasons.Count</div>
+            <div>Total episodes: @episodes.Count</div>
+            <div>Average episodes per season: @averageEpisodesPerSeason</div>
+        </div>
+    }
+
     <hr />
 
     <h4>Episodes</h4>
@@ -76,23 +86,23 @@ else
     {
         <table class="table table-striped">
             <thead>
-                <tr>
-                    <th>Season</th>
-                    <th>Episode</th>
-                    <th>Title</th>
-                    <th>Air date</th>
-                </tr>
+            <tr>
+                <th>Season</th>
+                <th>Episode</th>
+                <th>Title</th>
+                <th>Air date</th>
+            </tr>
             </thead>
             <tbody>
-                @foreach (var e in FilteredEpisodes!)
-                {
-                    <tr>
-                        <td>@e.Season</td>
-                        <td>@e.Number</td>
-                        <td>@e.Name</td>
-                        <td>@e.Airdate</td>
-                    </tr>
-                }
+            @foreach (var e in FilteredEpisodes!)
+            {
+                <tr>
+                    <td>@e.Season</td>
+                    <td>@e.Number</td>
+                    <td>@e.Name</td>
+                    <td>@e.Airdate</td>
+                </tr>
+            }
             </tbody>
         </table>
     }
@@ -112,6 +122,7 @@ else
     private string? errorMessage;
     private List<int> seasons = new();
     private int selectedSeason;
+    private double averageEpisodesPerSeason;
 
     protected override async Task OnParametersSetAsync()
     {
@@ -135,6 +146,10 @@ else
                 if (seasons.Count > 0)
                 {
                     selectedSeason = seasons[0];
+
+                   
+                    averageEpisodesPerSeason = Math.Round(
+                        (double)episodes.Count / seasons.Count, 1);  // extra feature: simple calculation
                 }
             }
         }

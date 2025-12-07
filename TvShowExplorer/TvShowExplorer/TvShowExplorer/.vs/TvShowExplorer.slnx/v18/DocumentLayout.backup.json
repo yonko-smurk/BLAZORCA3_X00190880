@@ -34,8 +34,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -44,14 +48,10 @@
               "RelativeDocumentMoniker": "TvShowExplorer\\Pages\\ShowDetails.razor",
               "ToolTip": "C:\\Users\\X00190880\\BlazorCA3\\TvShowExplorer\\TvShowExplorer\\TvShowExplorer\\TvShowExplorer\\Pages\\ShowDetails.razor",
               "RelativeToolTip": "TvShowExplorer\\Pages\\ShowDetails.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-12-02T00:58:49.182Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
               "$type": "Document",
@@ -61,9 +61,22 @@
               "RelativeDocumentMoniker": "TvShowExplorer\\Services\\TvMazeService.cs",
               "ToolTip": "C:\\Users\\X00190880\\BlazorCA3\\TvShowExplorer\\TvShowExplorer\\TvShowExplorer\\TvShowExplorer\\Services\\TvMazeService.cs",
               "RelativeToolTip": "TvShowExplorer\\Services\\TvMazeService.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwC4AAAAyAAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAAAowCsAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-01T22:09:09.149Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Home.razor",
+              "DocumentMoniker": "C:\\Users\\X00190880\\BlazorCA3\\TvShowExplorer\\TvShowExplorer\\TvShowExplorer\\TvShowExplorer\\Pages\\Home.razor",
+              "RelativeDocumentMoniker": "TvShowExplorer\\Pages\\Home.razor",
+              "ToolTip": "C:\\Users\\X00190880\\BlazorCA3\\TvShowExplorer\\TvShowExplorer\\TvShowExplorer\\TvShowExplorer\\Pages\\Home.razor",
+              "RelativeToolTip": "TvShowExplorer\\Pages\\Home.razor",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAYwIEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-01T22:28:20.021Z",
               "EditorCaption": ""
             },
             {
@@ -76,21 +89,7 @@
               "RelativeToolTip": "TvShowExplorer\\TvShowExplorer.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-12-01T22:07:14.879Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Home.razor",
-              "DocumentMoniker": "C:\\Users\\X00190880\\BlazorCA3\\TvShowExplorer\\TvShowExplorer\\TvShowExplorer\\TvShowExplorer\\Pages\\Home.razor",
-              "RelativeDocumentMoniker": "TvShowExplorer\\Pages\\Home.razor",
-              "ToolTip": "C:\\Users\\X00190880\\BlazorCA3\\TvShowExplorer\\TvShowExplorer\\TvShowExplorer\\TvShowExplorer\\Pages\\Home.razor",
-              "RelativeToolTip": "TvShowExplorer\\Pages\\Home.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-01T22:28:20.021Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-01T22:07:14.879Z"
             },
             {
               "$type": "Document",
@@ -102,8 +101,7 @@
               "RelativeToolTip": "TvShowExplorer\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T22:04:38.973Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-01T22:04:38.973Z"
             },
             {
               "$type": "Document",
@@ -115,8 +113,7 @@
               "RelativeToolTip": "TvShowExplorer\\Models\\TvMazeModels.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T22:06:43.211Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-01T22:06:43.211Z"
             }
           ]
         }
