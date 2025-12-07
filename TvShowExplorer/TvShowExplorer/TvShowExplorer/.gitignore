@@ -405,3 +405,12 @@ FodyWeavers.xsd
 
 # Blazor WebAssembly specific
 wwwroot/service-worker-assets.js
+
+# IDE and Copilot artifacts
+.vs/
+**/CopilotIndices/
+*.user
+*.suo
+*.db
+
+# Local NuGet cache
