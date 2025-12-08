@@ -1,0 +1,36 @@
+﻿@using TvShowExplorer.Models
+@inject NavigationManager NavManager
+
+<div class="card h-100" @onclick="NavigateToDetails" style="cursor: pointer;">
+    @if (!string.IsNullOrEmpty(Show.Image?.Medium))
+    {
+        <img src="@Show.Image.Medium" class="card-img-top" alt="@Show.Name" />
+    }
+    <div class="card-body">
+        <h5 class="card-title">@Show.Name</h5>
+
+        @if (Show.Genres is not null && Show.Genres.Length > 0)
+        {
+            <p class="card-text">
+                <strong>Genres:</strong> @string.Join(", ", Show.Genres)
+            </p>
+        }
+
+        @if (Show.Rating?.Average is not null)
+        {
+            <p class="card-text">
+                <strong>Rating:</strong> @Show.Rating.Average
+            </p>
+        }
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public TvMazeShow Show { get; set; } = default!;
+
+    private void NavigateToDetails()
+    {
+        NavManager.NavigateTo($"/show/{Show.Id}");
+    }
+}
