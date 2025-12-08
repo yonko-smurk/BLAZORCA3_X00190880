@@ -6,52 +6,53 @@
 
 <PageTitle>TV Show Explorer</PageTitle>
 
-<h1>TV Show Explorer</h1>
+<div class="container my-4">
+    <h1>TV Show Explorer</h1>
 
-<p>Search for a TV show by name (uses the TVmaze API).</p>
+    <p>Search for a TV show by name (uses the TVmaze API).</p>
 
-<EditForm Model="@search" OnValidSubmit="@SearchAsync">
-    <DataAnnotationsValidator />
+    <EditForm Model="@search" OnValidSubmit="@SearchAsync">
+        <DataAnnotationsValidator />
 
-    <div class="mb-3">
-        <label for="query" class="form-label">Show name</label>
-        <InputText id="query"
-                   class="form-control"
-                   @bind-Value="search.Query" />
-        <ValidationMessage For="@(() => search.Query)" />
-    </div>
+        <div class="mb-3">
+            <label for="query" class="form-label">Show name</label>
+            <InputText id="query"
+                       class="form-control"
+                       @bind-Value="search.Query" />
+            <ValidationMessage For="@(() => search.Query)" />
+        </div>
 
-    <button type="submit" class="btn btn-primary" disabled="@isSearching">
-        @(isSearching ? "Searching..." : "Search")
-    </button>
-</EditForm>
+        <button type="submit" class="btn btn-primary" disabled="@isSearching">
+            @(isSearching ? "Searching..." : "Search")
+        </button>
+    </EditForm>
 
-@if (!string.IsNullOrWhiteSpace(errorMessage))
-{
-    <div class="alert alert-warning mt-3">
-        @errorMessage
-    </div>
-}
+    @if (!string.IsNullOrWhiteSpace(errorMessage))
+    {
+        <div class="alert alert-warning mt-3">
+            @errorMessage
+        </div>
+    }
 
-@if (results is not null && results.Count > 0)
-{
-    <div class="row row-cols-1 row-cols-md-3 g-3 mt-3">
-        @foreach (var item in results)
-        {
-            var show = item.Show;
-            <div class="col">
-                <ShowCard Show="show" />
-            </div>
-        }
-
-    </div>
-}
-else if (results is not null && results.Count == 0 && string.IsNullOrEmpty(errorMessage))
-{
-    <div class="alert alert-info mt-3">
-        No shows found. Try another search.
-    </div>
-}
+    @if (results is not null && results.Count > 0)
+    {
+        <div class="row row-cols-1 row-cols-md-3 g-3 mt-3">
+            @foreach (var item in results)
+            {
+                var show = item.Show;
+                <div class="col">
+                    <ShowCard Show="show" />
+                </div>
+            }
+        </div>
+    }
+    else if (results is not null && results.Count == 0 && string.IsNullOrEmpty(errorMessage))
+    {
+        <div class="alert alert-info mt-3">
+            No shows found. Try another search.
+        </div>
+    }
+</div>
 
 @code {
     private SearchModel search = new();
@@ -83,11 +84,6 @@ else if (results is not null && results.Count == 0 && string.IsNullOrEmpty(error
             isSearching = false;
         }
     }
-
-    // private void GoToShow(int id)
-    // {
-    //     NavManager.NavigateTo($"/show/{id}");
-    // }
 
     public class SearchModel
     {
