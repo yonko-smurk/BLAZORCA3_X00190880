@@ -1,5 +1,7 @@
-﻿using System.Net.Http;
+﻿using System.Collections.Generic;
+using System.Net.Http;
 using System.Net.Http.Json;
+using System.Threading.Tasks;
 using TvShowExplorer.Models;
 
 namespace TvShowExplorer.Services
@@ -15,20 +17,15 @@ namespace TvShowExplorer.Services
 
         public async Task<List<TvMazeSearchResult>> SearchShowsAsync(string query)
         {
-            if (string.IsNullOrWhiteSpace(query))
-                return new List<TvMazeSearchResult>();
-
-            var encoded = Uri.EscapeDataString(query);
-            var url = $"/search/shows?q={encoded}";
+            var url = $"/search/shows?q={Uri.EscapeDataString(query)}";
 
             try
             {
-                var result = await _http.GetFromJsonAsync<List<TvMazeSearchResult>>(url);
-                return result ?? new List<TvMazeSearchResult>();
+                var results = await _http.GetFromJsonAsync<List<TvMazeSearchResult>>(url);
+                return results ?? new List<TvMazeSearchResult>();
             }
             catch
             {
-                
                 throw;
             }
         }
@@ -44,7 +41,6 @@ namespace TvShowExplorer.Services
             }
             catch
             {
-                // allowing the ui to handle nulls
                 throw;
             }
         }
@@ -55,8 +51,8 @@ namespace TvShowExplorer.Services
 
             try
             {
-                var result = await _http.GetFromJsonAsync<List<TvMazeEpisode>>(url);
-                return result ?? new List<TvMazeEpisode>();
+                var episodes = await _http.GetFromJsonAsync<List<TvMazeEpisode>>(url);
+                return episodes ?? new List<TvMazeEpisode>();
             }
             catch
             {

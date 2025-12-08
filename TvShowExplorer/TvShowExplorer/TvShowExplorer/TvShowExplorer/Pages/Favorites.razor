@@ -1,0 +1,47 @@
+﻿@page "/favorites"
+@using TvShowExplorer.Models
+@inject TvShowExplorer.Services.FavoritesService FavoritesService
+@inject TvShowExplorer.Services.TvMazeService TvMaze
+
+<h1>Favourite shows</h1>
+
+@if (isLoading)
+{
+    <p>Loading favourites…</p>
+}
+else if (!favoriteShows.Any())
+{
+    <p>You have no favourite shows yet. Go to the search page and add some!</p>
+}
+else
+{
+    <div class="row row-cols-1 row-cols-md-3 g-3 mt-3">
+        @foreach (var show in favoriteShows)
+        {
+            <div class="col">
+                <ShowCard Show="show" />
+            </div>
+        }
+    </div>
+}
+
+@code {
+    private bool isLoading = true;
+    private List<TvMazeShow> favoriteShows = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        var ids = await FavoritesService.GetFavoritesAsync();
+
+        foreach (var id in ids)
+        {
+            var show = await TvMaze.GetShowByIdAsync(id);
+            if (show is not null)
+            {
+                favoriteShows.Add(show);
+            }
+        }
+
+        isLoading = false;
+    }
+}
