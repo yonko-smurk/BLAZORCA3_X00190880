@@ -16,5 +16,6 @@ builder.Services.AddScoped(sp => new HttpClient
 
 builder.Services.AddScoped<TvMazeService>();
 builder.Services.AddScoped<FavoritesService>();
+builder.Services.AddScoped<WatchlistService>();
 
 await builder.Build().RunAsync();   

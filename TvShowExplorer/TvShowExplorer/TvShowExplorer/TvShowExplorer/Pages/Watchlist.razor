@@ -1,0 +1,54 @@
+@page "/watchlist"
+@using TvShowExplorer.Models
+@inject TvShowExplorer.Services.WatchlistService WatchlistService
+@inject TvShowExplorer.Services.TvMazeService TvMaze
+
+<PageTitle>My Watchlist</PageTitle>
+
+<div class="container my-4">
+    <h1>My Watchlist</h1>
+    <p>Shows you plan to watch.</p>
+
+    @if (isLoading)
+    {
+        <p>Loading watchlist...</p>
+    }
+    else if (!watchlistShows.Any())
+    {
+        <div class="alert alert-info">
+            Your watchlist is empty. Browse shows and add some to watch later!
+        </div>
+    }
+    else
+    {
+        <div class="row row-cols-1 row-cols-md-3 g-3 mt-3">
+            @foreach (var show in watchlistShows)
+            {
+                <div class="col">
+                    <ShowCard Show="show" />
+                </div>
+            }
+        </div>
+    }
+</div>
+
+@code {
+    private bool isLoading = true;
+    private List<TvMazeShow> watchlistShows = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        var ids = await WatchlistService.GetWatchlistAsync();
+
+        foreach (var id in ids)
+        {
+            var show = await TvMaze.GetShowByIdAsync(id);
+            if (show is not null)
+            {
+                watchlistShows.Add(show);
+            }
+        }
+
+        isLoading = false;
+    }
+}

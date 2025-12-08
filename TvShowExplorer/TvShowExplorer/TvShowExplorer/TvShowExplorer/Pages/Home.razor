@@ -7,81 +7,331 @@
 <PageTitle>TV Show Explorer</PageTitle>
 
 <div class="container my-4">
-    <h1>TV Show Explorer</h1>
+    <h1 class="text-center mb-4">TV Show Explorer</h1>
 
-    <p>Search for a TV show by name (uses the TVmaze API).</p>
-
-    <EditForm Model="@search" OnValidSubmit="@SearchAsync">
-        <DataAnnotationsValidator />
-
-        <div class="mb-3">
-            <label for="query" class="form-label">Show name</label>
-            <InputText id="query"
-                       class="form-control"
-                       @bind-Value="search.Query" />
-            <ValidationMessage For="@(() => search.Query)" />
-        </div>
-
-        <button type="submit" class="btn btn-primary" disabled="@isSearching">
-            @(isSearching ? "Searching..." : "Search")
-        </button>
-    </EditForm>
-
-    @if (!string.IsNullOrWhiteSpace(errorMessage))
-    {
-        <div class="alert alert-warning mt-3">
-            @errorMessage
-        </div>
-    }
-
-    @if (results is not null && results.Count > 0)
-    {
-        <div class="row row-cols-1 row-cols-md-3 g-3 mt-3">
-            @foreach (var item in results)
-            {
-                var show = item.Show;
-                <div class="col">
-                    <ShowCard Show="show" />
+    @* ===== SHOW OF THE DAY ===== *@
+    <section class="mb-5">
+        <h2 class="text-center">🌟 Random Shows To Watch</h2>
+        @if (isLoadingShowOfDay)
+        {
+            <p class="text-center">Loading show of the day...</p>
+        }
+        else if (showOfTheDay is not null)
+        {
+            <div class="d-flex justify-content-center">
+                <div class="card shadow" style="max-width: 600px; width: 100%;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            @if (!string.IsNullOrEmpty(showOfTheDay.Image?.Medium))
+                            {
+                                <img src="@showOfTheDay.Image.Medium" 
+                                     class="img-fluid rounded-start h-100" 
+                                     style="object-fit: cover;" 
+                                     alt="@showOfTheDay.Name" />
+                            }
+                            @* <a href="/show/@showOfTheDay.Id" class="btn btn-primary btn-sm">View Details</a> *@
+                        </div>
+                        <div class="col-md-8    ">
+                            <div class="card-body">
+                                <h5 class="card-title">@showOfTheDay.Name</h5>
+                                @if (showOfTheDay.Genres is { Length: > 0 })
+                                {
+                                    <p class="card-text"><small class="text-muted">@string.Join(", ", showOfTheDay.Genres)</small></p>
+                                }
+                                @if (showOfTheDay.Rating?.Average is not null)
+                                {
+                                    <p class="card-text"><strong>Rating:</strong> @showOfTheDay.Rating.Average</p>
+                                }
+                                <a href="/show/@showOfTheDay.Id" class="btn btn-primary btn-sm">View Details</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            }
+            </div>
+            <div class="text-center mt-3">
+                <button class="btn btn-outline-secondary" @onclick="PickRandomShow">
+                    🎲 New random show
+                </button>
+            </div>
+        }
+        else
+        {
+            <div class="text-center">
+                <p class="text-muted">Could not load show of the day.</p>
+                <button class="btn btn-outline-secondary" @onclick="PickRandomShow">
+                    🎲 Try again
+                </button>
+            </div>
+        }
+    </section>
+
+    @*@* SEARCH *@
+    <section class="mb-5">
+        <h2 >🔍 Search Shows</h2>
+        <p>Search for a TV show by name (uses the TVmaze API).</p>
+
+        <EditForm Model="@search" OnValidSubmit="@SearchAsync">
+            <DataAnnotationsValidator />
+
+            <div class="mb-3">
+                <label for="query" class="form-label">Show name</label>
+                <InputText id="query"
+                           class="form-control"
+                           @bind-Value="search.Query" />
+                <ValidationMessage For="@(() => search.Query)" />
+            </div>
+
+            <button type="submit" class="btn btn-primary" disabled="@isSearching">
+                @(isSearching ? "Searching..." : "Search")
+            </button>
+        </EditForm>
+
+        @if (!string.IsNullOrWhiteSpace(searchErrorMessage))
+        {
+            <div class="alert alert-warning mt-3">
+                @searchErrorMessage
+            </div>
+        }
+
+        @if (searchResults is not null && searchResults.Count > 0)
+        {
+            <div class="row mt-3">
+                <div class="col-md-4">
+                    <label class="form-label">Minimum rating</label>
+                    <input type="number"
+                           class="form-control"
+                           step="0.1"
+                           min="0"
+                           max="10"
+                           @bind="searchMinRating" />
+                    <div class="form-text">Only shows with rating ≥ @searchMinRating will be shown.</div>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">Sort by</label>
+                    <select class="form-select" @bind="searchSortMode">
+                        <option value="rating-desc">Rating (high → low)</option>
+                        <option value="rating-asc">Rating (low → high)</option>
+                        <option value="name">Name (A → Z)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row row-cols-1 row-cols-md-3 g-3 mt-3">
+                @foreach (var item in FilteredSearchResults)
+                {
+                    <div class="col">
+                        <ShowCard Show="item.Show" />
+                    </div>
+                }
+            </div>
+        }
+        else if (searchResults is not null && searchResults.Count == 0 && string.IsNullOrEmpty(searchErrorMessage))
+        {
+            <div class="alert alert-info mt-3">
+                No shows found. Try another search.
+            </div>
+        }
+    </section>
+
+    @* BROWSE SHOWS *@
+    <section class="mb-5 p-4 border rounded">
+        <h2 class="mb-3">📺 Browse Shows</h2>
+        <p class="text-muted">Explore shows with genre and rating filters.</p>
+
+        <div class="row g-3 align-items-end">
+            <div class="col-md-4">
+                <label class="form-label">Genre</label>
+                <select class="form-select" @bind="browseGenre">
+                    <option value="">All Genres</option>
+                    @foreach (var genre in availableGenres)
+                    {
+                        <option value="@genre">@genre</option>
+                    }
+                </select>
+            </div>
+            <div class="col-md-4">
+                <label class="form-label">Minimum rating</label>
+                <input type="number" class="form-control" step="0.1" min="0" max="10"
+                       @bind="browseMinRating" />
+            </div>
+            <div class="col-md-4">
+                <button class="btn btn-primary w-100" @onclick="LoadBrowseShows" disabled="@isLoadingBrowse">
+                    @(isLoadingBrowse ? "Loading..." : "Load Shows")
+                </button>
+            </div>
         </div>
-    }
-    else if (results is not null && results.Count == 0 && string.IsNullOrEmpty(errorMessage))
-    {
-        <div class="alert alert-info mt-3">
-            No shows found. Try another search.
-        </div>
-    }
+
+        @if (browseShows is not null && FilteredBrowseShows.Any())
+        {
+            <div class="row row-cols-1 row-cols-md-3 g-3 mt-3">
+                @foreach (var show in FilteredBrowseShows.Take(30))
+                {
+                    <div class="col">
+                        <ShowCard Show="show" />
+                    </div>
+                }
+            </div>
+        }
+        else if (browseShows is not null && !FilteredBrowseShows.Any())
+        {
+            <div class="alert alert-info mt-3">
+                No shows match your filters. Try adjusting them.
+            </div>
+        }
+    </section>
 </div>
 
 @code {
+    //  ===== SHOW OF THE DAY =====
+    private TvMazeShow? showOfTheDay;
+    private bool isLoadingShowOfDay = true;
+    private List<TvMazeShow> showPool = [];
+    private Random random = new();
+
+    // ===== SEARCH =====
     private SearchModel search = new();
-    private List<TvMazeSearchResult>? results;
+    private List<TvMazeSearchResult>? searchResults;
     private bool isSearching;
-    private string? errorMessage;
+    private string? searchErrorMessage;
+    private double searchMinRating = 0;
+    private string searchSortMode = "rating-desc";
+
+    // ===== BROWSE =====
+    private List<TvMazeShow>? browseShows;
+    private bool isLoadingBrowse;
+    private string browseGenre = "";
+    private double browseMinRating = 0;
+
+    private readonly string[] availableGenres =
+    [
+        "Drama", "Comedy", "Action", "Science-Fiction", "Thriller",
+        "Crime", "Horror", "Romance", "Adventure", "Fantasy",
+        "Mystery", "Family", "Anime", "Documentary", "Reality"
+    ];
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadShowPool();
+        PickRandomShow();
+    }
+
+    private async Task LoadShowPool()
+    {
+        isLoadingShowOfDay = true;
+
+        try
+        {
+            //to Load first page of shows for the random pool
+            showPool = await TvMaze.GetShowsByPageAsync(0);
+        }
+        catch
+        {
+            showPool = [];
+        }
+        finally
+        {
+            isLoadingShowOfDay = false;
+        }
+    }
+
+    private void PickRandomShow()
+    {
+        if (showPool.Count > 0)
+        {
+            var index = random.Next(showPool.Count);
+            showOfTheDay = showPool[index];
+        }
+        else
+        {
+            showOfTheDay = null;
+        }
+    }
+
+    // ===== SEARCH METHODS =====
+    private IEnumerable<TvMazeSearchResult> FilteredSearchResults
+    {
+        get
+        {
+            if (searchResults is null)
+                return Enumerable.Empty<TvMazeSearchResult>();
+
+            var query = searchResults
+                .Where(r => (r.Show.Rating?.Average ?? 0) >= searchMinRating);
+
+            return searchSortMode switch
+            {
+                "rating-asc" => query.OrderBy(r => r.Show.Rating?.Average ?? 0),
+                "name" => query.OrderBy(r => r.Show.Name),
+                _ => query.OrderByDescending(r => r.Show.Rating?.Average ?? 0)
+            };
+        }
+    }
 
     private async Task SearchAsync()
     {
-        errorMessage = null;
-        results = null;
+        searchErrorMessage = null;
+        searchResults = null;
         isSearching = true;
 
         try
         {
-            results = await TvMaze.SearchShowsAsync(search.Query!);
+            searchResults = await TvMaze.SearchShowsAsync(search.Query!);
 
-            if (results.Count == 0)
+            if (searchResults.Count == 0)
             {
-                errorMessage = "No shows found for that name.";
+                searchErrorMessage = "No shows found for that name.";
             }
         }
         catch
         {
-            errorMessage = "There was a problem contacting the TV service. Please try again.";
+            searchErrorMessage = "There was a problem contacting the TV service. Please try again.";
         }
         finally
         {
             isSearching = false;
+        }
+    }
+
+    // ===== BROWSE METHODS =====
+    private IEnumerable<TvMazeShow> FilteredBrowseShows
+    {
+        get
+        {
+            if (browseShows is null)
+                return Enumerable.Empty<TvMazeShow>();
+
+            var query = browseShows.AsEnumerable();
+
+            // Filter by genre
+            if (!string.IsNullOrEmpty(browseGenre))
+            {
+                query = query.Where(s => s.Genres?.Contains(browseGenre) == true);
+            }
+
+            // Filter by minimum rating
+            query = query.Where(s => (s.Rating?.Average ?? 0) >= browseMinRating);
+
+            // Sort by rating descending
+            return query.OrderByDescending(s => s.Rating?.Average ?? 0);
+        }
+    }
+
+    private async Task LoadBrowseShows()
+    {
+        isLoadingBrowse = true;
+
+        try
+        {
+            // load a page of shows for browsing
+            browseShows = await TvMaze.GetShowsByPageAsync(0);
+        }
+        catch
+        {
+            browseShows = [];
+        }
+        finally
+        {
+            isLoadingBrowse = false;
         }
     }
 

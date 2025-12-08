@@ -30,16 +30,30 @@
 
             <div class="col-md-8">
                 <h2>@show.Name</h2>
-                <button class="btn btn-sm btn-outline-warning mb-3" @onclick="ToggleFavorite">
-                    @if (isFavorite)
-                    {
-                        <span>★ Remove from favourites</span>
-                    }
-                    else
-                    {
-                        <span>☆ Add to favourites</span>
-                    }
-                </button>
+                
+                <div class="mb-3">
+                    <button class="btn btn-sm btn-outline-warning me-2" @onclick="ToggleFavorite">
+                        @if (isFavorite)
+                        {
+                            <span>★ Remove from favourites</span>
+                        }
+                        else
+                        {
+                            <span>☆ Add to favourites</span>
+                        }
+                    </button>
+                    
+                    <button class="btn btn-sm btn-outline-info" @onclick="ToggleWatchlist">
+                        @if (isInWatchlist)
+                        {
+                            <span>✓ Remove from watchlist</span>
+                        }
+                        else
+                        {
+                            <span>+ Add to watchlist</span>
+                        }
+                    </button>
+                </div>
 
                 @if (show.Genres is not null && show.Genres.Length > 0)
                 {
@@ -114,7 +128,10 @@
 
 @code {
     [Inject] FavoritesService Favorites { get; set; } = default!;
+    [Inject] WatchlistService Watchlist { get; set; } = default!;
+    
     private bool isFavorite;
+    private bool isInWatchlist;
 
     [Parameter]
     public int Id { get; set; }
@@ -131,6 +148,7 @@
         isLoading = true;
         errorMessage = null;
         isFavorite = await Favorites.IsFavoriteAsync(Id);
+        isInWatchlist = await Watchlist.IsInWatchlistAsync(Id);
 
         try
         {
@@ -166,6 +184,12 @@
     {
         await Favorites.ToggleFavoriteAsync(Id);
         isFavorite = await Favorites.IsFavoriteAsync(Id);
+    }
+
+    private async Task ToggleWatchlist()
+    {
+        await Watchlist.ToggleWatchlistAsync(Id);
+        isInWatchlist = await Watchlist.IsInWatchlistAsync(Id);
     }
 
     private IEnumerable<TvMazeEpisode>? FilteredEpisodes =>
