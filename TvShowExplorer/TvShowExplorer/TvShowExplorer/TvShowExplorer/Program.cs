@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
-using TvShowExplorer.Services;
 using TvShowExplorer;
 using TvShowExplorer.Services;
 
