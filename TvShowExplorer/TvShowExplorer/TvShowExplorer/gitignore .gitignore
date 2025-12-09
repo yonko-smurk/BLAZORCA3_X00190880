@@ -1,0 +1,11 @@
+# Playwright
+playwright/.cache/
+playwright-report/
+test-results/
+*.trace.zip
+*.video.mp4
+*.png
+*.har
+
+# Playwright browser binaries (downloaded via playwright install)
+ms-playwright/
