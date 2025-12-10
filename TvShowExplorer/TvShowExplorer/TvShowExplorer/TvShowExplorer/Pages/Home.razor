@@ -14,7 +14,7 @@
         <h2 class="text-center">🌟 Random Shows To Watch 🌟</h2>
         @if (isLoadingShowOfDay)
         {
-            <p class="text-center">Loading show of the day...</p>
+            <p class="text-center">Loading random Shows To Watch...</p>
         }
         else if (showOfTheDay is not null)
         {
@@ -182,7 +182,7 @@
 </div>
 
 @code {
-    //  ===== SHOW OF THE DAY =====
+    //  ===== Random  SHOW OF THE DAY =====
     private TvMazeShow? showOfTheDay;
     private bool isLoadingShowOfDay = true;
     private List<TvMazeShow> showPool = [];
