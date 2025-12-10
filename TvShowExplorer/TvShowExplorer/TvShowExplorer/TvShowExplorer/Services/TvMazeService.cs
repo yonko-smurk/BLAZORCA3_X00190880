@@ -60,9 +60,7 @@ namespace TvShowExplorer.Services
             }
         }
 
-        /// <summary>
-        /// Gets a page of shows (250 per page). Page is 0-indexed.
-        /// </summary>
+       
         public async Task<List<TvMazeShow>> GetShowsByPageAsync(int page = 0)
         {
             var url = $"/shows?page={page}";
@@ -79,3 +77,5 @@ namespace TvShowExplorer.Services
         }
     }
 }
+
+
