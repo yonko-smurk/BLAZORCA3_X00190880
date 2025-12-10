@@ -1,4 +1,4 @@
 <Solution>
-  <Project Path="TvShowExplorer.E2E/TvShowExplorer.E2E.csproj" Id="1a505400-d379-45af-a15b-ea48200dec99" />
+  <Project Path="TvShowExplorer.E2EV2/TvShowExplorer.E2EV2.csproj" Id="6c6d78fa-835c-4518-8541-caecdbc4bd3b" />
   <Project Path="TvShowExplorer/TvShowExplorer.csproj" />
 </Solution>
