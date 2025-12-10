@@ -50,3 +50,13 @@ Produce static output:
 dotnet publish TvShowExplorer\TvShowExplorer\TvShowExplorer\TvShowExplorer\TvShowExplorer.csproj -c Release -o publish-out
 ```
 Deploy the contents of `publish-out\wwwroot` (Azure Static Web Apps workflow is included in `.github/workflows/azure-static-web-apps-gray-plant-018db4303.yml`).
+
+## Troubleshooting
+
+| Symptom | Likely cause | Fix |
+| --- | --- | --- |
+| 404 for `_framework/blazor.webassembly.js` | Serving raw source `wwwroot` instead of dev server/publish output; cached loader | Run `dotnet run` or serve `publish-out\wwwroot`; hard-refresh (Ctrl+Shift+R) |
+| Port already in use (7033/5103) | Previous dev server still running | Stop the old server or run `dotnet run --urls http://localhost:5105` |
+| HTTPS cert warning locally | Dev certificate prompt | Click through or use `http://localhost:5103` |
+| Playwright cannot find browsers | Browsers not installed for tests | From E2E project, run `pwsh bin\Debug\net10.0\playwright.ps1 install` |
+| Search/API calls fail | No network to `https://api.tvmaze.com` | Check connectivity or retry later |
