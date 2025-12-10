@@ -1,6 +1,6 @@
 # TV Show Explorer (Blazor WebAssembly)
 
-Small Blazor WebAssembly app for exploring TV shows via the TVMaze API. Supports search with validation/filtering, a random “show of the day,” browsing, and managing favorites/watchlist (stored in `localStorage`). Includes Playwright end-to-end tests.
+Small Blazor WebAssembly app for exploring TV shows via the TVMaze API. Supports search with validation/filtering, a random show to watch, browsing, and managing favorites/watchlist (stored in `localStorage`). Includes Playwright end-to-end tests.
 
 Live app: https://gray-plant-018db4303.3.azurestaticapps.net/
 
